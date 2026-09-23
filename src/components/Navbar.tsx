@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Code, Sparkles, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Code, Sparkles, Sun, Moon, FileText } from 'lucide-react';
 import { profileData } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenResume?: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -98,6 +102,18 @@ export const Navbar: React.FC = () => {
               )}
             </button>
 
+            {onOpenResume && (
+              <button
+                type="button"
+                onClick={onOpenResume}
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 hover:border-cyan-400/50 shadow-sm transition-all duration-200"
+                title="View & Download Resume"
+              >
+                <FileText className="w-4 h-4 text-cyan-500" />
+                <span>Resume</span>
+              </button>
+            )}
+
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 transition-all duration-300 shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5"
@@ -150,7 +166,21 @@ export const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="pt-2 border-t border-slate-200 dark:border-slate-800 mt-1">
+              <div className="pt-2 border-t border-slate-200 dark:border-slate-800 mt-1 flex flex-col gap-2">
+                {onOpenResume && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsOpen(false);
+                      onOpenResume();
+                    }}
+                    className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700"
+                  >
+                    <FileText className="w-4 h-4 text-cyan-500" />
+                    <span>View Resume</span>
+                  </button>
+                )}
+
                 <a
                   href="#contact"
                   onClick={() => setIsOpen(false)}

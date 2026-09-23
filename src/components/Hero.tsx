@@ -2,7 +2,11 @@ import React from 'react';
 import { ArrowRight, Github, Linkedin, Mail, Download, Terminal, Sparkles, CheckCircle2 } from 'lucide-react';
 import { profileData } from '../data/portfolioData';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenResume?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
       {/* Background radial glow */}
@@ -52,14 +56,15 @@ export const Hero: React.FC = () => {
                 <span>Contact Me</span>
               </a>
 
-              <a
-                href={profileData.resumeUrl || "#contact"}
+              <button
+                type="button"
+                onClick={onOpenResume}
                 className="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-medium text-slate-600 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors"
-                title="Download or View Resume"
+                title="View & Download Resume (PDF, PNG, JPG)"
               >
                 <Download className="w-4 h-4" />
                 <span className="text-sm">Resume</span>
-              </a>
+              </button>
             </div>
 
             {/* Social Links */}

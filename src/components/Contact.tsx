@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, Send, Github, Linkedin, MessageSquare, MapPin, Sparkles } from 'lucide-react';
+import { Mail, Copy, Check, Send, Github, Linkedin, MessageSquare, MapPin, Sparkles, Phone } from 'lucide-react';
 import { profileData } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
@@ -91,8 +91,25 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Location & Status Info */}
+              {/* Location, Phone & Status Info */}
               <div className="space-y-3 pt-2 text-sm text-slate-300">
+                {profileData.phone && (
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-slate-800/80 text-cyan-400">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="text-xs text-slate-500 block">Phone</span>
+                      <a
+                        href={`tel:${profileData.phone.replace(/[^0-9+]/g, '')}`}
+                        className="font-medium font-mono text-xs sm:text-sm text-cyan-300 hover:underline"
+                      >
+                        {profileData.phone}
+                      </a>
+                    </div>
+                  </div>
+                )}
+
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-slate-800/80 text-cyan-400">
                     <MapPin className="w-4 h-4" />

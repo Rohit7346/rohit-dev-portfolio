@@ -40,6 +40,7 @@ export interface Profile {
   badge: string;
   bio: string[];
   email: string;
+  phone?: string;
   location: string;
   resumeUrl?: string;
   socials: {

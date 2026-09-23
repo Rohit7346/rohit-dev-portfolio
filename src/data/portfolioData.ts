@@ -1,41 +1,42 @@
 import { Profile, Project, SkillCategory, Experience } from '../types/portfolio';
 
 export const profileData: Profile = {
-  name: "Rohit",
-  role: "Full Stack Software Engineer",
-  badge: "Available for new opportunities",
+  name: "Rohit K",
+  role: "Software Engineer & Full Stack Developer",
+  badge: "Available for opportunities & internships",
   email: "rohit132005kv@gmail.com",
-  location: "India",
-  resumeUrl: "#contact", // or path to resume PDF (e.g. "/resume.pdf")
+  phone: "+91-7899117346",
+  location: "Bengaluru, India",
+  resumeUrl: "#contact", // or link to PDF resume
   socials: {
-    github: "https://github.com",
+    github: "https://github.com/Rohit7346",
     linkedin: "https://linkedin.com",
     email: "mailto:rohit132005kv@gmail.com",
   },
   bio: [
-    "I am a passionate software engineer dedicated to building scalable web applications, robust system architectures, and intuitive digital experiences.",
-    "Driven by curiosity and craftsmanship, I bridge the gap between polished user interfaces and resilient backend systems. When I'm not coding, I enjoy exploring emerging AI technologies, open-source tooling, and algorithmic problem solving."
+    "I am a Computer Science & Engineering undergraduate at M S Ramaiah University of Applied Sciences (Bengaluru) with an academic CGPA of 9.33, specializing in full-stack engineering, Java, Spring Boot, React, and modern databases.",
+    "With industry internship experience at Bharat Electronics Limited (BEL) in the Software Solutions Division, I have engineered military-grade user management systems and real-time collaborative cloud editors. I thrive at the intersection of robust backend architectures, clean object-oriented design, and snappy user interfaces."
   ],
   metrics: [
     {
-      label: "Code & Projects",
-      value: "15+",
-      sublabel: "Completed repositories"
+      label: "Academic CGPA",
+      value: "9.33",
+      sublabel: "MSRUAS Computer Science"
     },
     {
-      label: "Tech Mastery",
-      value: "10+",
-      sublabel: "Languages & Frameworks"
+      label: "Full Stack Projects",
+      value: "Production Ready",
+      sublabel: "Spring Boot & React ecosystem"
     },
     {
-      label: "Uptime & Quality",
-      value: "99.9%",
-      sublabel: "Performance minded"
+      label: "Industry Experience",
+      value: "BEL Intern",
+      sublabel: "Software Solutions Division"
     },
     {
-      label: "Continuous Learning",
-      value: "100%",
-      sublabel: "Passionate builder"
+      label: "Core Engineering",
+      value: "DSA & OOPS",
+      sublabel: "Strong CS fundamentals"
     }
   ]
 };
@@ -45,195 +46,129 @@ export const skillCategories: SkillCategory[] = [
     category: "Languages",
     icon: "Code2",
     skills: [
-      { name: "TypeScript", highlight: true },
-      { name: "JavaScript", highlight: true },
+      { name: "Java", highlight: true },
       { name: "Python", highlight: true },
-      { name: "Java" },
-      { name: "C / C++" },
+      { name: "JavaScript", highlight: true },
+      { name: "C", highlight: false },
+      { name: "C++", highlight: false },
       { name: "SQL", highlight: true },
-      { name: "HTML5 / CSS3" }
+      { name: "HTML5 / CSS3", highlight: false }
     ]
   },
   {
-    category: "Frontend Development",
+    category: "Frameworks & Frontend",
     icon: "Layout",
     skills: [
-      { name: "React.js", highlight: true },
-      { name: "Next.js", highlight: true },
+      { name: "Spring Boot", highlight: true },
+      { name: "React", highlight: true },
+      { name: "Spring Data JPA", highlight: true },
+      { name: "Hibernate", highlight: true },
       { name: "Tailwind CSS", highlight: true },
-      { name: "Vite" },
-      { name: "Redux / Zustand" },
-      { name: "Responsive UI/UX" },
-      { name: "Framer Motion" }
+      { name: "Vite", highlight: false },
+      { name: "REST APIs", highlight: true }
     ]
   },
   {
-    category: "Backend & Systems",
-    icon: "Server",
-    skills: [
-      { name: "Node.js", highlight: true },
-      { name: "Express.js", highlight: true },
-      { name: "FastAPI" },
-      { name: "RESTful APIs", highlight: true },
-      { name: "GraphQL" },
-      { name: "Microservices" },
-      { name: "WebSockets" }
-    ]
-  },
-  {
-    category: "Databases & Cloud",
+    category: "Databases & Storage",
     icon: "Database",
     skills: [
       { name: "PostgreSQL", highlight: true },
       { name: "MongoDB", highlight: true },
-      { name: "Redis" },
-      { name: "Supabase" },
-      { name: "Firebase" },
-      { name: "Docker" },
-      { name: "AWS / Vercel" }
+      { name: "MySQL", highlight: true },
+      { name: "CRUD Architectures", highlight: false }
     ]
   },
   {
-    category: "Tools & Practices",
+    category: "Developer Tools",
     icon: "Cpu",
     skills: [
       { name: "Git & GitHub", highlight: true },
-      { name: "Linux / Bash" },
-      { name: "Postman" },
-      { name: "CI / CD Pipelines" },
-      { name: "Agile Development" },
-      { name: "Clean Architecture" }
+      { name: "IntelliJ IDEA", highlight: true },
+      { name: "VS Code", highlight: true },
+      { name: "Eclipse", highlight: false },
+      { name: "Postman", highlight: false }
+    ]
+  },
+  {
+    category: "Core Computer Science",
+    icon: "Server",
+    skills: [
+      { name: "Data Structures & Algorithms", highlight: true },
+      { name: "OOPS Concept", highlight: true },
+      { name: "DBMS", highlight: true },
+      { name: "Operating Systems", highlight: true },
+      { name: "Network Security", highlight: false },
+      { name: "Artificial Intelligence", highlight: false }
     ]
   }
 ];
 
 export const projectsData: Project[] = [
   {
-    id: "devpulse-dashboard",
-    title: "DevPulse - Developer Analytics & Task Hub",
-    tagline: "High-performance productivity dashboard with real-time analytics",
-    description: "A comprehensive developer workspace combining git commit tracking, sprint task management, and performance insights with responsive data visualization.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Node.js"],
+    id: "army-digital-info-system",
+    title: "Army Digital Information System",
+    tagline: "Full-stack military-grade user management with dual online/offline mode",
+    description: "Developed a full-stack military-grade user management system with dual-mode (online/offline) functionality, role-based access control (RBAC), and session tracking.",
+    tags: ["Spring Boot", "Spring Data JPA", "PostgreSQL", "JavaScript", "HTML/CSS"],
     category: "Full Stack",
     featured: true,
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/Rohit7346",
+    liveUrl: "https://github.com/Rohit7346",
     highlights: [
-      "Custom interactive charts rendering sub-second metric updates",
-      "Full dark mode support with accessible contrast ratios",
-      "JWT-based role authentication and granular activity logs"
+      "Dual-mode (online/offline) functionality for continuous operations in varied network environments",
+      "Role-based access control (RBAC) ensuring high security and role separation",
+      "Comprehensive CRUD operations with Excel import/export capabilities",
+      "Real-time user session management with automatic timeout features and simultaneous multi-user login tracking"
     ]
   },
   {
-    id: "cloud-sync-vault",
-    title: "CloudSync Vault",
-    tagline: "End-to-end encrypted storage & team asset management",
-    description: "Secure digital asset manager supporting real-time collaborative file synchronization, tagging, search indexing, and automated thumbnail extraction.",
-    tags: ["Next.js", "PostgreSQL", "Prisma", "Tailwind CSS", "AWS S3"],
+    id: "collaborative-presentation-editor",
+    title: "Collaborative Presentation Editor",
+    tagline: "Full-stack real-time PowerPoint-like presentation editor with cloud persistence",
+    description: "Developed a full-stack PowerPoint-like presentation editor featuring real-time multi-user editing, slide canvas controls, MongoDB autosave, and advanced presentation tooling.",
+    tags: ["React", "Vite", "Tailwind CSS", "Spring Boot", "MongoDB"],
     category: "Full Stack",
     featured: true,
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/Rohit7346",
+    liveUrl: "https://github.com/Rohit7346",
     highlights: [
-      "Client-side encryption using modern Web Crypto API",
-      "Multi-tenant file tree hierarchy with instant fuzzy search",
-      "Distributed background processing pipeline for media assets"
-    ]
-  },
-  {
-    id: "ai-prompt-studio",
-    title: "NeuralFlow AI Studio",
-    tagline: "Interactive playground for prompt evaluation and LLM pipelines",
-    description: "An intuitive web interface for structuring, chaining, and evaluating multi-model LLM workflows with live streaming tokens and latency benchmarking.",
-    tags: ["React", "Python", "FastAPI", "TypeScript", "Tailwind CSS"],
-    category: "AI / Systems",
-    featured: true,
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Server-Sent Events (SSE) token streaming with zero stutter",
-      "Custom node-based visual workflow builder",
-      "Exportable execution history and cost estimation calculator"
-    ]
-  },
-  {
-    id: "algo-visualizer",
-    title: "Algorithm Odyssey",
-    tagline: "Interactive 3D & 2D algorithm visualization sandbox",
-    description: "Educational visualizer demonstrating graph traversals, pathfinding algorithms (A*, Dijkstra), and sorting steps with customizable step speeds and grid sizes.",
-    tags: ["TypeScript", "Canvas API", "Tailwind CSS", "Vite"],
-    category: "Frontend",
-    featured: false,
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Smooth 60fps animations utilizing requestAnimationFrame",
-      "Interactive maze generation (recursive division, Prim's)",
-      "Detailed step-by-step state inspector and pseudo-code viewer"
-    ]
-  },
-  {
-    id: "stream-commerce",
-    title: "Nexus Commerce API",
-    tagline: "Resilient microservices backend for digital product checkouts",
-    description: "High-throughput e-commerce engine equipped with inventory reservation locks, idempotency keys, and automated webhook dispatchers.",
-    tags: ["Node.js", "Express", "Redis", "PostgreSQL", "Docker"],
-    category: "Backend",
-    featured: false,
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    highlights: [
-      "Handles 2,000+ RPS with sub-30ms p95 latency under benchmark loads",
-      "Distributed cache invalidation using Redis Pub/Sub",
-      "Comprehensive test coverage using Jest and Supertest"
+      "Editable slides, text, shapes, images, tables, charts, themes, layouts, and Ribbon-based controls",
+      "Real-time collaborative editing with role-based access, synchronized slide/object updates, object locking, collaborator presence, and version checkpoints",
+      "MongoDB-backed autosave and presentation persistence preserving complete slide elements, chart/table data, and state across reloads",
+      "PowerPoint import, presentation CMS, data binding, presentation analytics, Smart Slide Remix, and Auto Arrange"
     ]
   }
 ];
 
 export const experienceData: Experience[] = [
   {
-    id: "exp-1",
-    role: "Full Stack Software Developer",
-    company: "Engineering & Innovation Projects",
-    location: "Remote / Hybrid",
-    period: "2024 — Present",
-    description: "Architecting and developing modern responsive web applications, robust microservices, and interactive developer tools.",
+    id: "bel-internship",
+    role: "Intern — Software Solutions Division",
+    company: "Bharat Electronics Limited (BEL)",
+    location: "Bengaluru, India",
+    period: "Aug 2025 — Sep 2025",
+    description: "Engaged in enterprise-grade software engineering workflows and lifecycle practices within the Software Solutions Division at Bharat Electronics Limited.",
     achievements: [
-      "Designed and deployed responsive web apps used by hundreds of monthly active visitors",
-      "Optimized frontend bundle sizes by 40% using dynamic imports and code splitting in Vite",
-      "Automated testing and CI/CD pipelines, accelerating release cycles"
+      "Gained clear understanding of Software Development Life Cycle (SDLC) stages from requirement analysis to deployment and maintenance",
+      "Contributed to development and testing tasks related to project workflows under engineering supervision",
+      "Collaborated with research and engineering teams to enhance system accuracy and operational efficiency"
     ],
-    skills: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    skills: ["SDLC", "Software Testing", "System Architecture", "Quality Assurance", "Team Collaboration"],
     type: "work"
   },
   {
-    id: "edu-1",
-    role: "Bachelor of Technology / Computer Science & Engineering",
-    company: "University / Institute",
-    location: "India",
-    period: "2022 — 2026",
-    description: "Focused on Data Structures, Algorithms, Software Engineering, Database Management Systems, and Cloud Computing.",
+    id: "msruas-education",
+    role: "B.E., Computer Science and Engineering (CGPA: 9.33)",
+    company: "M S Ramaiah University of Applied Sciences",
+    location: "Bengaluru, India",
+    period: "Aug 2023 — July 2027",
+    description: "Pursuing Bachelor of Engineering with an exceptional academic record (CGPA: 9.33), focusing on core systems engineering, algorithmic problem solving, and modern application development.",
     achievements: [
-      "Maintained top-tier academic standing with focus on core Computer Science fundamentals",
-      "Active participant in hackathons, coding contests, and open-source contributions",
-      "Led technical workshops on modern web development and Git best practices"
+      "Outstanding Academic Record: CGPA of 9.33 / 10 in Computer Science & Engineering",
+      "Core coursework: Data Structures & Algorithms, Operating Systems, DBMS, Network Security, Artificial Intelligence, OOPS Concept",
+      "Hands-on project work developing production-ready systems using Spring Boot, React, and modern databases"
     ],
-    skills: ["DSA", "Operating Systems", "DBMS", "Computer Networks", "OOP"],
+    skills: ["DSA", "DBMS", "Operating Systems", "Network Security", "AI", "OOPS"],
     type: "education"
-  },
-  {
-    id: "achieve-1",
-    role: "Open Source Contributor & Problem Solver",
-    company: "Developer Community",
-    location: "Global",
-    period: "Ongoing",
-    description: "Regularly solving algorithmic challenges and contributing to open-source developer ecosystems.",
-    achievements: [
-      "Solved 300+ algorithmic challenges across platforms like LeetCode and HackerRank",
-      "Authored open-source utilities and reusable UI components",
-      "Collaborated with developers globally on modern web specifications"
-    ],
-    skills: ["Algorithms", "Problem Solving", "System Design", "Git"],
-    type: "achievement"
   }
 ];

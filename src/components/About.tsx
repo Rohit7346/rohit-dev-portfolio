@@ -70,10 +70,13 @@ export const About: React.FC = () => {
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 block">Direct Email</span>
-                    <span className="font-medium text-xs sm:text-sm truncate block max-w-[180px]">
+                    <span className="text-xs text-slate-500 block">Email</span>
+                    <a
+                      href={`mailto:${profileData.email}`}
+                      className="font-medium text-xs sm:text-sm truncate block max-w-[180px] hover:text-cyan-400 transition-colors"
+                    >
                       {profileData.email}
-                    </span>
+                    </a>
                   </div>
                 </div>
 
@@ -82,8 +85,8 @@ export const About: React.FC = () => {
                     <GraduationCap className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 block">Focus</span>
-                    <span className="font-medium">Computer Science</span>
+                    <span className="text-xs text-slate-500 block">Education</span>
+                    <span className="font-medium">B.E. CSE (CGPA: 9.33)</span>
                   </div>
                 </div>
 
@@ -92,8 +95,8 @@ export const About: React.FC = () => {
                     <Zap className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 block">Availability</span>
-                    <span className="font-medium text-emerald-400">Active & Ready</span>
+                    <span className="text-xs text-slate-500 block">Industry Experience</span>
+                    <span className="font-medium text-emerald-400">BEL Intern (Solutions)</span>
                   </div>
                 </div>
               </div>

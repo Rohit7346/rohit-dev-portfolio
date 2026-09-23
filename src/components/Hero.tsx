@@ -138,19 +138,23 @@ export const Hero: React.FC = () => {
                   <span className="text-emerald-300">"{profileData.role}"</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-400">status:</span>{' '}
-                  <span className="text-emerald-300">"Open to hire"</span>,
+                  <span className="text-slate-400">location:</span>{' '}
+                  <span className="text-emerald-300">"{profileData.location}"</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-400">focus:</span> [
+                  <span className="text-slate-400">education:</span>{' '}
+                  <span className="text-emerald-300">"MSRUAS CSE (CGPA: 9.33)"</span>,
+                </div>
+                <div className="pl-4">
+                  <span className="text-slate-400">experience:</span>{' '}
+                  <span className="text-emerald-300">"BEL Intern (Solutions)"</span>,
+                </div>
+                <div className="pl-4">
+                  <span className="text-slate-400">coreStack:</span> [
                   <div className="pl-4 text-amber-300">
-                    "Full Stack", "APIs", "Cloud", "UI/UX"
+                    "Java", "Spring Boot", "React", "PostgreSQL"
                   </div>
                   ],
-                </div>
-                <div className="pl-4">
-                  <span className="text-slate-400">coffeeToCodeRatio:</span>{' '}
-                  <span className="text-cyan-400">Infinity</span>,
                 </div>
                 <div>{'};'}</div>
                 <div className="mt-3 text-slate-500 italic">// Core mission</div>
@@ -161,7 +165,7 @@ export const Hero: React.FC = () => {
                 <div className="pl-4 text-slate-300">
                   <span className="text-indigo-400">return</span>{' '}
                   <span className="text-cyan-300">engineer</span>.
-                  <span className="text-sky-300">craftModernApps</span>();
+                  <span className="text-sky-300">engineerScalableSystems</span>();
                 </div>
                 <div>{'}'}</div>
               </div>

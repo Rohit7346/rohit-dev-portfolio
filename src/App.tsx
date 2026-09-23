@@ -8,14 +8,10 @@ import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { TravelingStarsBackground } from './components/TravelingStarsBackground';
 
 export const AppContent: React.FC = () => {
   return (
-    <div className="min-h-screen bg-transparent text-slate-800 dark:text-slate-100 relative selection:bg-cyan-500/20 selection:text-cyan-600 dark:selection:text-cyan-300 transition-colors duration-300">
-      {/* Pure Traveling Stars Night Sky Background */}
-      <TravelingStarsBackground />
-
+    <div className="min-h-screen bg-slate-50 text-slate-800 dark:bg-[#080d1a] dark:text-slate-100 relative selection:bg-cyan-500/20 selection:text-cyan-600 dark:selection:text-cyan-300 transition-colors duration-300">
       <Navbar />
 
       <main className="space-y-8 relative z-10">

@@ -8,13 +8,13 @@ import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ComicCosmosBackground } from './components/ComicCosmosBackground';
+import { TravelingStarsBackground } from './components/TravelingStarsBackground';
 
 export const AppContent: React.FC = () => {
   return (
     <div className="min-h-screen bg-transparent text-slate-800 dark:text-slate-100 relative selection:bg-cyan-500/20 selection:text-cyan-600 dark:selection:text-cyan-300 transition-colors duration-300">
-      {/* Comic Night Sky Cosmos Traveling in Background */}
-      <ComicCosmosBackground />
+      {/* Pure Traveling Stars Night Sky Background */}
+      <TravelingStarsBackground />
 
       <Navbar />
 

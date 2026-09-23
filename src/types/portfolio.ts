@@ -37,7 +37,7 @@ export interface Experience {
 export interface Profile {
   name: string;
   role: string;
-  badge: string;
+  badge?: string;
   bio: string[];
   email: string;
   phone?: string;

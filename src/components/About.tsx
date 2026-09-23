@@ -5,17 +5,17 @@ import { profileData } from '../data/portfolioData';
 export const About: React.FC = () => {
   const pillars = [
     {
-      icon: <Zap className="w-6 h-6 text-amber-400" />,
+      icon: <Zap className="w-6 h-6 text-amber-500 dark:text-amber-400" />,
       title: "Performance First",
       description: "Obsessed with snappy page loads, optimized queries, and clean bundle sizes."
     },
     {
-      icon: <ShieldCheck className="w-6 h-6 text-cyan-400" />,
+      icon: <ShieldCheck className="w-6 h-6 text-cyan-500 dark:text-cyan-400" />,
       title: "Reliable & Scalable",
       description: "Writing type-safe, resilient code that scales gracefully under heavy workloads."
     },
     {
-      icon: <HeartHandshake className="w-6 h-6 text-emerald-400" />,
+      icon: <HeartHandshake className="w-6 h-6 text-emerald-500 dark:text-emerald-400" />,
       title: "User-Centric Design",
       description: "Crafting fluid, intuitive experiences where functionality meets aesthetic elegance."
     }
@@ -27,14 +27,14 @@ export const About: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cyan-400 bg-cyan-950/40 border border-cyan-800/40 px-3 py-1 rounded-full">
+          <div className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-800/40 px-3 py-1 rounded-full">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Discover</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             About Me
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
             Bridging technical engineering with modern product design
           </p>
         </div>
@@ -45,58 +45,58 @@ export const About: React.FC = () => {
           {/* Main Story */}
           <div className="lg:col-span-7 space-y-5">
             <div className="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
-              <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <span>Engineering with passion & precision</span>
               </h3>
               {profileData.bio.map((paragraph, idx) => (
-                <p key={idx} className="text-slate-300 leading-relaxed text-sm sm:text-base">
+                <p key={idx} className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
                   {paragraph}
                 </p>
               ))}
 
-              <div className="pt-4 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                <div className="flex items-center gap-2.5 text-slate-300">
-                  <div className="p-2 rounded-lg bg-slate-800/60 text-cyan-400">
+              <div className="pt-4 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                <div className="flex items-center gap-2.5 text-slate-700 dark:text-slate-300">
+                  <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/60 text-cyan-600 dark:text-cyan-400">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 block">Location</span>
-                    <span className="font-medium">{profileData.location}</span>
+                    <span className="font-medium text-slate-900 dark:text-slate-100">{profileData.location}</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2.5 text-slate-300">
-                  <div className="p-2 rounded-lg bg-slate-800/60 text-emerald-400">
+                <div className="flex items-center gap-2.5 text-slate-700 dark:text-slate-300">
+                  <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/60 text-emerald-600 dark:text-emerald-400">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 block">Email</span>
                     <a
                       href={`mailto:${profileData.email}`}
-                      className="font-medium text-xs sm:text-sm truncate block max-w-[180px] hover:text-cyan-400 transition-colors"
+                      className="font-medium text-xs sm:text-sm truncate block max-w-[180px] text-slate-900 dark:text-slate-100 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
                     >
                       {profileData.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2.5 text-slate-300">
-                  <div className="p-2 rounded-lg bg-slate-800/60 text-indigo-400">
+                <div className="flex items-center gap-2.5 text-slate-700 dark:text-slate-300">
+                  <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/60 text-indigo-600 dark:text-indigo-400">
                     <GraduationCap className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 block">Education</span>
-                    <span className="font-medium">B.E. CSE (CGPA: 9.33)</span>
+                    <span className="font-medium text-slate-900 dark:text-slate-100">B.E. CSE (CGPA: 9.33)</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2.5 text-slate-300">
-                  <div className="p-2 rounded-lg bg-slate-800/60 text-amber-400">
+                <div className="flex items-center gap-2.5 text-slate-700 dark:text-slate-300">
+                  <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/60 text-amber-600 dark:text-amber-400">
                     <Zap className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-xs text-slate-500 block">Industry Experience</span>
-                    <span className="font-medium text-emerald-400">BEL Intern (Solutions)</span>
+                    <span className="font-medium text-emerald-600 dark:text-emerald-400">BEL Intern (Solutions)</span>
                   </div>
                 </div>
               </div>
@@ -110,10 +110,10 @@ export const About: React.FC = () => {
                 key={idx}
                 className="glass-card glass-card-hover rounded-2xl p-5 text-center flex flex-col justify-center relative overflow-hidden group"
               >
-                <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 mb-1 group-hover:scale-105 transition-transform duration-300">
+                <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-indigo-500 dark:from-cyan-400 dark:to-indigo-400 mb-1 group-hover:scale-105 transition-transform duration-300">
                   {metric.value}
                 </div>
-                <div className="text-xs sm:text-sm font-semibold text-slate-200">
+                <div className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
                   {metric.label}
                 </div>
                 <div className="text-[11px] text-slate-500 mt-1">
@@ -131,11 +131,11 @@ export const About: React.FC = () => {
               key={idx}
               className="glass-card glass-card-hover rounded-2xl p-6 space-y-3"
             >
-              <div className="p-3 w-fit rounded-xl bg-slate-800/80 border border-slate-700/60 shadow-inner">
+              <div className="p-3 w-fit rounded-xl bg-slate-100 border border-slate-200 dark:bg-slate-800/80 dark:border-slate-700/60 shadow-inner">
                 {pillar.icon}
               </div>
-              <h4 className="text-lg font-bold text-white">{pillar.title}</h4>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <h4 className="text-lg font-bold text-slate-900 dark:text-white">{pillar.title}</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                 {pillar.description}
               </p>
             </div>

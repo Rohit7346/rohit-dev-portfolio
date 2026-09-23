@@ -3,7 +3,6 @@ import { Profile, Project, SkillCategory, Experience } from '../types/portfolio'
 export const profileData: Profile = {
   name: "Rohit K",
   role: "Software Engineer & Full Stack Developer",
-  badge: "Available for opportunities & internships",
   email: "rohit132005kv@gmail.com",
   phone: "+91-7899117346",
   location: "Bengaluru, India",

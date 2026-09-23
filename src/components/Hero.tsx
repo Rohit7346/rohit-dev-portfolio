@@ -13,33 +13,24 @@ export const Hero: React.FC = () => {
           
           {/* Left Column: Text & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-medium shadow-sm shadow-emerald-500/10 backdrop-blur-md">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-              </span>
-              <span>{profileData.badge}</span>
-            </div>
-
             {/* Headline */}
             <div className="space-y-3">
-              <h2 className="text-sm sm:text-base font-mono uppercase tracking-wider text-cyan-400 font-semibold">
+              <h2 className="text-sm sm:text-base font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400 font-semibold">
                 Hello world, I'm
               </h2>
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                 {profileData.name}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-sky-400 to-indigo-500">
                   .
                 </span>
               </h1>
-              <p className="text-2xl sm:text-3xl font-bold text-slate-300">
+              <p className="text-2xl sm:text-3xl font-bold text-slate-700 dark:text-slate-300">
                 {profileData.role}
               </p>
             </div>
 
             {/* Tagline / Summary */}
-            <p className="text-base sm:text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Passionate about turning complex challenges into clean, scalable software.
               Specializing in modern full-stack development, cloud-ready architectures, and intuitive web interfaces.
             </p>
@@ -56,14 +47,14 @@ export const Hero: React.FC = () => {
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/80 hover:border-slate-600 transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-slate-800 bg-white hover:bg-slate-100 border border-slate-200 shadow-sm dark:text-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 dark:border-slate-700/80 dark:shadow-none transition-all duration-300 hover:-translate-y-0.5"
               >
                 <span>Contact Me</span>
               </a>
 
               <a
                 href={profileData.resumeUrl || "#contact"}
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-medium text-slate-400 hover:text-cyan-400 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-medium text-slate-600 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors"
                 title="Download or View Resume"
               >
                 <Download className="w-4 h-4" />
@@ -72,13 +63,13 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-3 pt-4 text-slate-400">
-              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider mr-2">Connect:</span>
+            <div className="flex items-center justify-center lg:justify-start gap-3 pt-4 text-slate-500 dark:text-slate-400">
+              <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mr-2">Connect:</span>
               <a
                 href={profileData.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 hover:text-cyan-400 hover:bg-slate-800/60 transition-all duration-200 hover:-translate-y-0.5"
+                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -87,14 +78,14 @@ export const Hero: React.FC = () => {
                 href={profileData.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 hover:text-cyan-400 hover:bg-slate-800/60 transition-all duration-200 hover:-translate-y-0.5"
+                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href={profileData.socials.email}
-                className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 hover:text-cyan-400 hover:bg-slate-800/60 transition-all duration-200 hover:-translate-y-0.5"
+                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />

@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Mail, Download, Terminal, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { profileData } from '../data/portfolioData';
+import { HeroCodeCard } from './HeroCodeCard';
 
 interface HeroProps {
   onOpenResume?: () => void;
@@ -98,83 +99,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             </div>
           </div>
 
-          {/* Right Column: Interactive Code & Visual Card */}
+          {/* Right Column: Interactive Code & Visual Card with Run Program Feature */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-md rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl backdrop-blur-xl overflow-hidden relative group hover:border-cyan-500/30 transition-all duration-500">
-              {/* Window Header */}
-              <div className="px-4 py-3 bg-slate-950/70 border-b border-slate-800/80 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-                  <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                  <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                  <span className="ml-2 text-xs font-mono text-slate-400 flex items-center gap-1.5">
-                    <Terminal className="w-3.5 h-3.5 text-cyan-400" />
-                    developer.ts
-                  </span>
-                </div>
-                <div className="flex items-center gap-1 text-[11px] font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2 py-0.5 rounded-full">
-                  <CheckCircle2 className="w-3 h-3" />
-                  <span>Compiled</span>
-                </div>
-              </div>
-
-              {/* Code Snippet */}
-              <div className="p-5 font-mono text-xs sm:text-sm leading-relaxed text-slate-300 overflow-x-auto">
-                <div className="text-slate-500 italic">// Developer Identity</div>
-                <div>
-                  <span className="text-indigo-400">const</span>{' '}
-                  <span className="text-cyan-300">engineer</span> = {'{'}
-                </div>
-                <div className="pl-4">
-                  <span className="text-slate-400">name:</span>{' '}
-                  <span className="text-emerald-300">"{profileData.name}"</span>,
-                </div>
-                <div className="pl-4">
-                  <span className="text-slate-400">role:</span>{' '}
-                  <span className="text-emerald-300">"{profileData.role}"</span>,
-                </div>
-                <div className="pl-4">
-                  <span className="text-slate-400">location:</span>{' '}
-                  <span className="text-emerald-300">"{profileData.location}"</span>,
-                </div>
-                <div className="pl-4">
-                  <span className="text-slate-400">education:</span>{' '}
-                  <span className="text-emerald-300">"MSRUAS CSE (CGPA: 9.33)"</span>,
-                </div>
-                <div className="pl-4">
-                  <span className="text-slate-400">experience:</span>{' '}
-                  <span className="text-emerald-300">"BEL Intern (Solutions)"</span>,
-                </div>
-                <div className="pl-4">
-                  <span className="text-slate-400">coreStack:</span> [
-                  <div className="pl-4 text-amber-300">
-                    "Java", "Spring Boot", "React", "PostgreSQL"
-                  </div>
-                  ],
-                </div>
-                <div>{'};'}</div>
-                <div className="mt-3 text-slate-500 italic">// Core mission</div>
-                <div>
-                  <span className="text-indigo-400">function</span>{' '}
-                  <span className="text-amber-400">buildSolutions</span>() {'{'}
-                </div>
-                <div className="pl-4 text-slate-300">
-                  <span className="text-indigo-400">return</span>{' '}
-                  <span className="text-cyan-300">engineer</span>.
-                  <span className="text-sky-300">engineerScalableSystems</span>();
-                </div>
-                <div>{'}'}</div>
-              </div>
-
-              {/* Card Footer Metric Highlight */}
-              <div className="px-5 py-3 bg-slate-950/60 border-t border-slate-800/80 flex items-center justify-between text-xs font-mono">
-                <div className="flex items-center gap-2 text-slate-400">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Always shipping value</span>
-                </div>
-                <span className="text-cyan-400 font-semibold">Ready to deploy</span>
-              </div>
-            </div>
+            <HeroCodeCard />
           </div>
 
         </div>

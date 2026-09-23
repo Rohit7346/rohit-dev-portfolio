@@ -8,6 +8,7 @@ import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { JetFlightTransition } from './components/JetFlightTransition';
 
 export const AppContent: React.FC = () => {
   return (
@@ -18,6 +19,9 @@ export const AppContent: React.FC = () => {
         <div className="absolute top-1/3 -right-40 w-[450px] h-[450px] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[150px]" />
         <div className="absolute bottom-10 left-1/4 w-80 h-80 bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[130px]" />
       </div>
+
+      {/* Supersonic Jet Scroll & Section Transition Animations */}
+      <JetFlightTransition />
 
       <Navbar />
 

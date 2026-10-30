@@ -20,22 +20,30 @@ export const profileData: Profile = {
     {
       label: "Academic CGPA",
       value: "9.33",
-      sublabel: "MSRUAS Computer Science"
+      sublabel: "MSRUAS Computer Science",
+      icon: "GraduationCap",
+      badge: "Top 5%"
     },
     {
-      label: "Full Stack Projects",
-      value: "Production Ready",
-      sublabel: "Spring Boot & React ecosystem"
+      label: "Full Stack Systems",
+      value: "2+",
+      sublabel: "Production & Military Grade",
+      icon: "Layers",
+      badge: "Spring + React"
     },
     {
-      label: "Industry Experience",
-      value: "BEL Intern",
-      sublabel: "Software Solutions Division"
+      label: "Defense R&D Intern",
+      value: "BEL",
+      sublabel: "Software Solutions Division",
+      icon: "Building2",
+      badge: "Industry SDLC"
     },
     {
-      label: "Core Engineering",
-      value: "DSA & OOPS",
-      sublabel: "Strong CS fundamentals"
+      label: "Core Technologies",
+      value: "10+",
+      sublabel: "Java, Spring, React & DBs",
+      icon: "Code2",
+      badge: "Full Stack"
     }
   ]
 };
@@ -146,6 +154,9 @@ export const experienceData: Experience[] = [
     company: "Bharat Electronics Limited (BEL)",
     location: "Bengaluru, India",
     period: "Aug 2025 — Sep 2025",
+    logoUrl: "/logos/bel-logo.png",
+    companyUrl: "https://bel-india.in",
+    badgeText: "Navratna Defence PSU",
     description: "Engaged in enterprise-grade software engineering workflows and lifecycle practices within the Software Solutions Division at Bharat Electronics Limited.",
     achievements: [
       "Gained clear understanding of Software Development Life Cycle (SDLC) stages from requirement analysis to deployment and maintenance",
@@ -161,6 +172,9 @@ export const experienceData: Experience[] = [
     company: "M S Ramaiah University of Applied Sciences",
     location: "Bengaluru, India",
     period: "Aug 2023 — July 2027",
+    logoUrl: "/logos/msruas-logo.png",
+    companyUrl: "https://www.msruas.ac.in",
+    badgeText: "CGPA: 9.33 / 10",
     description: "Pursuing Bachelor of Engineering with an exceptional academic record (CGPA: 9.33), focusing on core systems engineering, algorithmic problem solving, and modern application development.",
     achievements: [
       "Outstanding Academic Record: CGPA of 9.33 / 10 in Computer Science & Engineering",

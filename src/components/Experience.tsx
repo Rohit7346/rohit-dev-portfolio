@@ -1,6 +1,7 @@
 import React from 'react';
-import { Briefcase, GraduationCap, Award, Calendar, MapPin, Milestone } from 'lucide-react';
+import { Briefcase, GraduationCap, Award, Calendar, MapPin, Milestone, ExternalLink } from 'lucide-react';
 import { experienceData } from '../data/portfolioData';
+import { OrgLogo } from './OrgLogos';
 
 export const Experience: React.FC = () => {
   const getTypeBadge = (type: string) => {
@@ -58,17 +59,52 @@ export const Experience: React.FC = () => {
 
               {/* Card Container */}
               <div className="glass-card glass-card-hover rounded-2xl p-6 sm:p-7 space-y-4">
-                {/* Header row */}
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                        {item.role}
-                      </h3>
-                      {getTypeBadge(item.type)}
-                    </div>
-                    <div className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                      {item.company}
+                {/* Header row with Organization Logo */}
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    {/* Organization Logo Badge */}
+                    {item.logoUrl && (
+                      <div className="shrink-0 pt-0.5">
+                        <OrgLogo
+                          id={item.id}
+                          logoUrl={item.logoUrl}
+                          name={item.company}
+                          companyUrl={item.companyUrl}
+                          badgeText={item.badgeText}
+                          size="md"
+                        />
+                      </div>
+                    )}
+
+                    <div className="space-y-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                          {item.role}
+                        </h3>
+                        {getTypeBadge(item.type)}
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                          {item.company}
+                        </span>
+                        {item.companyUrl && (
+                          <a
+                            href={item.companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-xs text-cyan-600 dark:text-cyan-400 hover:underline gap-0.5 font-medium"
+                          >
+                            <span>Visit</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
+                        {item.badgeText && (
+                          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                            {item.badgeText}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
 

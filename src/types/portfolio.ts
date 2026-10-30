@@ -32,6 +32,9 @@ export interface Experience {
   achievements: string[];
   skills: string[];
   type: 'work' | 'education' | 'achievement';
+  logoUrl?: string;
+  companyUrl?: string;
+  badgeText?: string;
 }
 
 export interface Profile {
@@ -53,5 +56,7 @@ export interface Profile {
     label: string;
     value: string;
     sublabel: string;
+    icon?: string;
+    badge?: string;
   }[];
 }

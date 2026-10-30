@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { profileData } from '../data/portfolioData';
 import { HeroCodeCard } from './HeroCodeCard';
+import { OrgLogo } from './OrgLogos';
 
 interface HeroProps {
   onOpenResume?: () => void;
@@ -68,34 +69,54 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               </button>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center justify-center lg:justify-start gap-3 pt-4 text-slate-500 dark:text-slate-400">
-              <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider mr-2">Connect:</span>
-              <a
-                href={profileData.socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href={profileData.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href={profileData.socials.email}
-                className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
+            {/* Social Links & Organizations */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4 text-slate-500 dark:text-slate-400">
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider">Connect:</span>
+                <a
+                  href={profileData.socials.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href={profileData.socials.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href={profileData.socials.email}
+                  className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 hover:text-cyan-600 hover:border-cyan-400 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 dark:text-slate-400 dark:hover:text-cyan-400 dark:hover:border-cyan-500/40 dark:hover:bg-slate-800/60 dark:shadow-none transition-all duration-200 hover:-translate-y-0.5"
+                  aria-label="Email"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
+
+              {/* Organization Logos */}
+              <div className="flex items-center gap-2 pl-0 sm:pl-4 sm:border-l sm:border-slate-200 sm:dark:border-slate-800">
+                <OrgLogo
+                  id="bel"
+                  logoUrl="/logos/bel-logo.png"
+                  name="Bharat Electronics Limited (BEL)"
+                  companyUrl="https://bel-india.in"
+                  size="sm"
+                />
+                <OrgLogo
+                  id="msruas"
+                  logoUrl="/logos/msruas-logo.png"
+                  name="M S Ramaiah University of Applied Sciences"
+                  companyUrl="https://www.msruas.ac.in"
+                  size="sm"
+                />
+              </div>
             </div>
           </div>
 

@@ -216,8 +216,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 EDUCATION
               </h2>
               <div className="mt-2 text-xs">
-                <div className="flex justify-between items-baseline font-bold text-slate-900">
-                  <span>M S Ramaiah University of Applied Sciences</span>
+                <div className="flex justify-between items-center font-bold text-slate-900">
+                  <div className="flex items-center gap-2">
+                    <img src="/logos/msruas-logo.png" alt="MSRUAS Logo" className="h-5 w-auto object-contain scale-125" />
+                    <span>M S Ramaiah University of Applied Sciences</span>
+                  </div>
                   <span className="font-normal italic text-slate-700">Aug 2023 – July 2027</span>
                 </div>
                 <div className="flex justify-between items-baseline text-slate-800 mt-0.5">
@@ -314,8 +317,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 INTERNSHIP
               </h2>
               <div className="mt-2">
-                <div className="flex justify-between items-baseline text-xs font-bold text-slate-900">
-                  <span>Bharat Electronics Limited (BEL)</span>
+                <div className="flex justify-between items-center text-xs font-bold text-slate-900">
+                  <div className="flex items-center gap-2">
+                    <img src="/logos/bel-logo.png" alt="BEL Logo" className="h-5 w-auto object-contain" />
+                    <span>Bharat Electronics Limited (BEL)</span>
+                  </div>
                   <span className="font-normal italic text-slate-700">Aug 2025 – Sep 2025</span>
                 </div>
                 <div className="flex justify-between items-baseline text-xs text-slate-800 mt-0.5">

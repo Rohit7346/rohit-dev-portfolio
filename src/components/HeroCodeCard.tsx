@@ -60,10 +60,19 @@ export const HeroCodeCard: React.FC = () => {
 
         {/* Action Button: Run / Rerun */}
         <div className="flex items-center gap-2">
+          {activeTab === 'code' && (
+            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
+              <Check className="w-3 h-3" /> Compiled
+            </span>
+          )}
           <button
             onClick={handleRun}
             disabled={isRunning}
-            className="flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 shadow-sm shadow-emerald-500/10"
+            className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all hover:scale-105 active:scale-95 disabled:opacity-50 shadow-md ${
+              activeTab === 'code'
+                ? 'bg-emerald-500 text-slate-950 hover:bg-emerald-400 shadow-emerald-500/20'
+                : 'bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 shadow-emerald-500/10'
+            }`}
             title="Execute developer.ts to view profile details"
           >
             {isRunning ? (
@@ -78,7 +87,7 @@ export const HeroCodeCard: React.FC = () => {
               </>
             ) : (
               <>
-                <Play className="w-3 h-3 fill-emerald-400" />
+                <Play className="w-3 h-3 fill-current" />
                 <span>Run</span>
               </>
             )}
@@ -148,86 +157,120 @@ export const HeroCodeCard: React.FC = () => {
         {/* TAB 2: Execution Terminal Output */}
         {activeTab === 'output' && (
           <div className="space-y-3 animate-in fade-in duration-200">
-            {/* Command Prompt */}
-            <div className="flex items-center gap-2 text-slate-400">
-              <span className="text-emerald-400 font-bold">$</span>
-              <span className="text-slate-200">ts-node developer.ts</span>
+            {/* Command Line & Status Badge */}
+            <div className="flex items-center justify-between pb-2.5 border-b border-slate-800/80 text-xs">
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-400 font-bold">$</span>
+                <span className="text-slate-100 font-semibold">ts-node</span>
+                <span className="text-cyan-300">developer.ts</span>
+                <span className="text-slate-500">--profile</span>
+              </div>
+              <span className="text-[11px] text-emerald-400 font-mono bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full flex items-center gap-1.5 shadow-sm shadow-emerald-500/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>READY</span>
+              </span>
             </div>
 
             {isRunning ? (
-              <div className="py-8 flex flex-col items-center justify-center gap-3 text-slate-400">
-                <RotateCcw className="w-5 h-5 animate-spin text-cyan-400" />
-                <span className="text-xs">Compiling & executing program...</span>
+              <div className="py-14 flex flex-col items-center justify-center gap-3 text-slate-400">
+                <RotateCcw className="w-6 h-6 animate-spin text-cyan-400" />
+                <span className="text-xs font-mono text-slate-300">Executing developer.ts...</span>
+                <span className="text-[11px] text-slate-500">Resolving types & verifying credentials</span>
               </div>
             ) : (
-              <div className="space-y-2">
-                {/* Build/Execution Log steps */}
-                <div className="space-y-1 text-slate-400 text-xs">
-                  <div className="text-emerald-400 flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5" />
-                    <span>Loaded developer identity: {profileData.name}</span>
-                  </div>
-                  <div className="text-emerald-400 flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5" />
-                    <span>Academic records verified: MSRUAS CSE (CGPA: 9.33)</span>
-                  </div>
-                  <div className="text-emerald-400 flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5" />
-                    <span>Industry experience: Bharat Electronics Limited (BEL)</span>
-                  </div>
+              <div className="space-y-2.5">
+                {/* Fast Status Bar */}
+                <div className="flex items-center gap-2 text-[11px] text-slate-400 pb-1 border-b border-slate-800/50">
+                  <span className="text-emerald-400 flex items-center gap-1 font-semibold">
+                    <Check className="w-3.5 h-3.5 text-emerald-400" /> Verified Identity
+                  </span>
+                  <span className="text-slate-600">•</span>
+                  <span>MSRUAS CSE (9.33)</span>
+                  <span className="text-slate-600">•</span>
+                  <span>BEL Intern</span>
                 </div>
 
-                {/* Formatted Output Object */}
-                <div className="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800/90 text-xs leading-relaxed space-y-1 text-slate-300">
-                  <div className="text-slate-500">// Program Return Value (JSON):</div>
-                  <div>{'{'}</div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"status"</span>: <span className="text-emerald-400">"ONLINE & READY TO BUILD"</span>,
+                {/* Structured Output Grid */}
+                <div className="space-y-1.5 text-xs">
+                  <div className="grid grid-cols-12 gap-2 py-1 border-b border-slate-800/40 items-center">
+                    <span className="col-span-4 text-slate-500 font-medium">ENGINEER</span>
+                    <span className="col-span-8 text-white font-bold flex items-center gap-2">
+                      <span>{profileData.name}</span>
+                      <span className="text-[10px] text-cyan-300 font-mono font-normal bg-cyan-950/80 border border-cyan-800/80 px-1.5 py-0.5 rounded">
+                        Full Stack
+                      </span>
+                    </span>
                   </div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"engineer"</span>: <span className="text-amber-300">"{profileData.name}"</span>,
+
+                  <div className="grid grid-cols-12 gap-2 py-1 border-b border-slate-800/40 items-center">
+                    <span className="col-span-4 text-slate-500 font-medium">ROLE</span>
+                    <span className="col-span-8 text-slate-200 font-medium">
+                      Software Engineer & Full Stack Developer
+                    </span>
                   </div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"role"</span>: <span className="text-amber-300">"{profileData.role}"</span>,
+
+                  <div className="grid grid-cols-12 gap-2 py-1 border-b border-slate-800/40 items-center">
+                    <span className="col-span-4 text-slate-500 font-medium">LOCATION</span>
+                    <span className="col-span-8 text-slate-300">
+                      {profileData.location}
+                    </span>
                   </div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"location"</span>: <span className="text-amber-300">"{profileData.location}"</span>,
+
+                  <div className="grid grid-cols-12 gap-2 py-1 border-b border-slate-800/40 items-center">
+                    <span className="col-span-4 text-slate-500 font-medium">INDUSTRY</span>
+                    <span className="col-span-8 text-emerald-300 font-medium flex items-center gap-1.5">
+                      <span>Bharat Electronics Limited (BEL)</span>
+                      <span className="text-[10px] text-emerald-400 bg-emerald-950/80 border border-emerald-800/80 px-1.5 py-0.5 rounded">
+                        Defense R&D
+                      </span>
+                    </span>
                   </div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"education"</span>: <span className="text-amber-300">"B.E. CSE • CGPA: 9.33 (MSRUAS)"</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"internship"</span>: <span className="text-amber-300">"BEL (Software Solutions Division)"</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"keyProjects"</span>: [
-                    <div className="pl-4 text-emerald-300">
-                      {projectsData.map((p, idx) => (
-                        <div key={idx}>"{p.title}"{idx < projectsData.length - 1 ? ',' : ''}</div>
+
+                  <div className="grid grid-cols-12 gap-2 py-1 border-b border-slate-800/40 items-center">
+                    <span className="col-span-4 text-slate-500 font-medium">CORE STACK</span>
+                    <div className="col-span-8 flex flex-wrap gap-1">
+                      {["Java", "Spring Boot", "React", "PostgreSQL"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-1.5 py-0.5 rounded text-[10px] bg-slate-800/90 text-amber-300 border border-slate-700/60 font-mono"
+                        >
+                          {tech}
+                        </span>
                       ))}
                     </div>
-                    ],
                   </div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"email"</span>: <span className="text-cyan-300">"{profileData.email}"</span>,
+
+                  <div className="grid grid-cols-12 gap-2 py-1 border-b border-slate-800/40 items-center">
+                    <span className="col-span-4 text-slate-500 font-medium">PROJECTS</span>
+                    <span className="col-span-8 text-cyan-300 truncate font-mono text-[11px]">
+                      Army Digital System • Real-Time Editor
+                    </span>
                   </div>
-                  <div className="pl-4">
-                    <span className="text-sky-300">"github"</span>: <span className="text-cyan-300">"{profileData.socials.github}"</span>
+
+                  <div className="grid grid-cols-12 gap-2 py-1 items-center">
+                    <span className="col-span-4 text-slate-500 font-medium">CONTACT</span>
+                    <span className="col-span-8 text-slate-300 flex items-center gap-2">
+                      <a
+                        href={`mailto:${profileData.email}`}
+                        className="text-cyan-400 hover:text-cyan-300 hover:underline truncate"
+                      >
+                        {profileData.email}
+                      </a>
+                    </span>
                   </div>
-                  <div>{'}'}</div>
                 </div>
 
-                {/* Exit Status */}
-                <div className="flex items-center justify-between text-[11px] pt-1 text-slate-500">
-                  <span className="text-emerald-400 flex items-center gap-1">
+                {/* Exit Status Footer */}
+                <div className="flex items-center justify-between text-[11px] pt-2 border-t border-slate-800/80 text-slate-500">
+                  <span className="text-emerald-400 flex items-center gap-1.5 font-mono">
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Process exited with code 0 (24ms)</span>
+                    <span>Process exited with code 0 (18ms)</span>
                   </span>
                   <button
                     onClick={() => setActiveTab('code')}
-                    className="text-cyan-400 hover:underline"
+                    className="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1 font-mono text-[11px]"
                   >
-                    View Source Code &rarr;
+                    <span>&lt;/&gt; Source Code</span>
                   </button>
                 </div>
               </div>
